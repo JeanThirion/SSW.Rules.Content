@@ -27,6 +27,7 @@ index:
 - use-default-zone-url-in-search-content-source
 - search-employee-skills
 - use-icons-sharepoint
+- identify-crm-web-servers-by-colors
 - do-you-use-sharepoints-news-feature
 - sharepoint-usage
 - keep-sharepoint-databases-in-a-separate-sql-instance
