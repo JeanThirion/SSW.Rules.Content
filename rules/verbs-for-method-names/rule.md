@@ -8,6 +8,10 @@ created: 2024-11-05T00:00:00.0000000Z
 authors:
   - title: Matt Goldman
     url: https://ssw.com.au/people/matt-goldman
+  - title: Jeoffrey Fischer
+    url: https://ssw.com.au/people/jeoffrey-fischer
+  - title: Daniel Mackay
+    url: https://ssw.com.au/people/daniel-mackay
 related:
   - clear-meaningful-names
   - nouns-for-class-names
@@ -26,32 +30,37 @@ Code becomes easier to understand when names align closely with their meaning. S
 <!--endintro-->
 
 ## What is a verb?
-A verb is a word that describes an action or process—something that’s done. Examples include walk, run, think, listen, and breathe, as well as process, calculate, send, and save. While your method names shouldn’t all be single verbs (since that’s often too vague), they should be verb-based, using a verb as the foundation of their meaning.
+
+A verb is a word that describes an action or process—something that’s done. Examples include **walk**, **run**, **think**, **listen**, and **breathe**, as well as **process**, **calculate**, **send**, and **save**.
+
+## Naming methods as verbs
+
+While your method names shouldn’t all be single verbs (since that’s often too vague), they should be verb-based, using a verb as the foundation of their meaning.
 
 :::greybox
-Imagine you’re working on an e-commerce app and need to write code to handle shipping products to customers who have completed an order. You create a method called `Ship`. While Ship is a verb, it’s also a noun, making it ambiguous. Additionally, it’s not descriptive enough to convey the method’s purpose clearly.
+Using **`Ship`** as a method to initiate shipping orders to customers.
 :::
 :::bad
-A method represents an action, so naming it like a thing will cause confusion
+Bad example - While 'ship' is a verb, it’s also a noun, making it ambiguous. Plus, it's not very descriptive!
 :::
 
 :::greybox
-A better name for this method is `SendCustomerOrder`. It’s specific, making it clear what the method does and within what context.
+Using **`SendCustomerOrder`**
 :::
 :::good
-A method that is named as a verb clearly tells you that it does something, and what that thing is
-:::
+Good example - A method that is named as a verb clearly tells you that it does something (sends), and what that thing is (a customer order)
+:::  
 
 :::greybox
-Suppose you’re working on an electronic medical record system, and you need to create a way for nurses to document medications that have been administered to patients. You name the method `Administration`. This is problematic for two reasons — it’s a noun, and it’s ambiguous. “Administration” has multiple meanings, and the method name doesn’t make it clear what this action involves.
+Using **`Administration`** as a method name for nurses to document medications that have been administered to patients.
 :::
 :::bad
-A method that not only isn't a clear action, but uses a word that needs context (and none is provided) is guaranteed to cause confusion
-:::
+Bad example - It’s a noun, and it’s ambiguous. 'Administration' has multiple meanings, and the method name doesn’t make it clear what this action involves
+:::  
 
 :::greybox
-A more precise name for this method is `AdministerMedication`. It clearly describes the real-world action it models. Another option could be `RecordMedication`, but this is less effective. First, “record” can be either a noun or a verb, and second, it lacks context — it could imply logging delivery to a pharmacy or entering a new medication type into the system.
+Using **`AdministerMedication`** makes the action clear
 :::
 :::good
-Method names that describe the action and provide any needed context help avoid confusion
+Good example - Method name describes the action
 :::

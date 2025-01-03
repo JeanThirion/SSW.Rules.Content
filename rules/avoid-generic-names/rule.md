@@ -8,6 +8,10 @@ created: 2024-11-05T00:00:00.0000000Z
 authors:
   - title: Matt Goldman
     url: https://ssw.com.au/people/matt-goldman
+  - title: Jeoffrey Fischer
+    url: https://ssw.com.au/people/jeoffrey-fischer
+  - title: Daniel Mackay
+    url: https://ssw.com.au/people/daniel-mackay
 related:
   - clear-meaningful-names
   - verbs-for-method-names
@@ -23,36 +27,40 @@ guid: f0b473e1-c892-4a21-8319-68f56f713c0d
 
 Generic names like “manager”, "helper", “processor”, “data”, and “info” are easy to reach for, but they tell us very little about a class or method’s true purpose. These words are catch-alls — they don’t communicate what the code actually does or what entity it represents. Avoiding these vague terms forces us to choose names that reflect a specific role or responsibility.
 
-
 <!--endintro-->
 
 ## Why generic names are problematic
-Words like "manager" and "processor" imply something that handles various tasks, which can make it tempting to pile unrelated responsibilities into one class. "Helper" makes this worse as it becomes a catch-all for a collection of disorganized functionality.Names like "data" or "info" are similarly ambiguous, as they could apply to nearly anything, from a database connection to a simple string. Specific names are always preferable, as they make the code easier to understand and prevent code bloat from accumulating unrelated functionality.
+
+Words like "manager" and "processor" imply something that handles various tasks, which can make it tempting to pile unrelated responsibilities into one class. "Helper" makes this worse as it becomes a catch-all for a collection of disorganized functionality. Names like "data" or "info" are similarly ambiguous, as they could apply to nearly anything, from a database connection to a simple string.
+
+Specific names are always preferable, as they make the code easier to understand and prevent code bloat from accumulating unrelated functionality.
 
 :::greybox
-Imagine you’re writing a class to handle orders in an e-commerce system. You name it `OrderManager`. While this name suggests that it might have something to do with orders, it doesn’t clarify how it interacts with them. Is it creating orders, updating them, processing payments, or all of the above? The generic term “manager” gives us no clear indication.
+Using **`OrderManager`** as a class to handle orders in an e-commerce system.
 :::
 :::bad
-Generic names only tell you what part of the domain or code base a class or method works with, not what it does
+Bad example - While this name suggests that it might have something to do with orders, it doesn’t clarify how it interacts with them. Creating orders? Updating them? Processing payments? All of the above?
 :::
 
 :::greybox
-A better name could be `OrderProcessor`, but if the class specifically handles only one aspect — say, sending orders for shipment — a more precise name would be `ShippingOrderHandler` or `OrderShipmentService`. This name directly reflects its purpose, making it immediately clear what the class is responsible for.
+Using **`OrderCreator`** for specifically creating orders  
+
+Using **`ShippingOrderHandler`** or **`OrderShipmentService`** specifically handles only one aspect of the order - sending for shipment
 :::
 :::good
-Specific names are better than generic names
-:::
+Good example - This name directly reflects its purpose, making it immediately clear what the class is responsible for
+:::  
 
 :::greybox
-Let’s say you’re building a system to track medical records, and you create a class called `PatientData`. The name could apply to anything — health information, appointment history, test results. There’s no way to tell what role this class actually plays.
+Using **`UserData`** for tracking the data for each user account.
 :::
 :::bad
-The name 'data' could literally mean just about anything
+Bad example - The name 'data' could mean just about anything
 :::
 
 :::greybox
-If the class is responsible for managing a patient’s appointment history, a more accurate name could be `PatientAppointmentHistory`. This name immediately tells us the scope and purpose of the class without relying on catch-all terms.
+Using **`UserOrderHistory`** requires no explanation!
 :::
 :::good
-A class name for the specific data that it represents is much easier to understand
+Good example - Immediately tells us the scope and purpose of the class
 :::
